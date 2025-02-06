@@ -19,13 +19,24 @@ Begin VB.Form Form1
    ScaleWidth      =   13860
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
-   Begin VB.CommandButton btnConectar 
-      Caption         =   "Conectar"
-      Height          =   3255
-      Left            =   4695
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "PASSOU PELO LOGIN"
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   36
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   870
+      Left            =   2550
       TabIndex        =   0
-      Top             =   4380
-      Width           =   3495
+      Top             =   4185
+      Width           =   8790
    End
 End
 Attribute VB_Name = "Form1"

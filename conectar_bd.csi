@@ -1,5 +1,5 @@
 [History]
-1=#P0#=mb	#P1#=checkSenha_Click	#P2#=Project1/FLogin/checkSenha_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250205072140	#P7#=0	#P8#=2	.
-2=#P0#=mb	#P1#=btnEntrar_Click	#P2#=Project1/FLogin/btnEntrar_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250205071640	#P7#=0	#P8#=4	.
-3=#P0#=mb	#P1#=btnConectar_Click	#P2#=Project1/Form1/btnConectar_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250205071544	#P7#=0	#P8#=6	.
-4=#P0#=mb	#P1#=Conexao	#P2#=Project1/ADO/Conexao	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250203233718	#P7#=0	#P8#=10	.
+1=#P0#=mb	#P1#=Form_Load	#P2#=Project1/FLogin/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250205222229	#P7#=0	#P8#=1	.
+2=#P0#=mb	#P1#=checkSenha_Click	#P2#=Project1/FLogin/checkSenha_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250205223408	#P7#=0	#P8#=-2	.
+3=#P0#=mb	#P1#=btnEntrar_Click	#P2#=Project1/FLogin/btnEntrar_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250205232750	#P7#=0	#P8#=15	.
+4=#P0#=mb	#P1#=Conexao	#P2#=Project1/ADO/Conexao	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250205232700	#P7#=0	#P8#=13	.

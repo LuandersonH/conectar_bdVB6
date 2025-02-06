@@ -118,14 +118,43 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub btnEntrar_Click()
-If Me.TUsuario.Text = "" And Me.TSenha.Text = "" Then
-   MsgBox "Preencha os campos de Login e Senha", vbCritical, "Aviso!"
-   Exit Sub
-End If
+    Dim queryVerificarAcesso As String
+    Dim usuarioDigitado As String
+    Dim senhaDigitada As String
 
-MsgBox "teste"
+   'Tira espaços em branco do login e senha
+    HandleUsuarioLogin = Trim(TUsuario.Text)
+    HandleSenhaLogin = Trim(TSenha.Text)
+    
+    If HandleUsuarioLogin = "" Or HandleSenhaLogin = "" Then
+        MsgBox "Por favor, preencha os campos de usuário e senha", vbExclamation, "Aviso"
+        Exit Sub
+    End If
+      
+   ' Faço minha query e depois consulto no banco (conexão feita no arquivo ADO)
+   queryVerificarAcesso = "SELECT * FROM tb_login WHERE usuario = '" & HandleUsuarioLogin & "' AND senha = '" & HandleSenhaLogin & "'"
+   
+   ' queryVerificarAcesso = comando SQL que irá ser executado no banco de dados
+   ' connect = variável que guarda a conexão ADO, que já está configurada com o tipo de conexão e caminho do banco de dados Access
+   ' adOpenStatic = tipo de cursor, que indica que os dados lidos não serão atualizados automaticamente após a consulta; é um cursor "estático"
+   ' adLockReadOnly = tipo de bloqueio, indicando que os dados são somente para leitura, ou seja, não podem ser modificados
+   record.Open queryVerificarAcesso, connect, adOpenStatic, adLockReadOnly
+
+      
+    'Verifica se deu certo o login
+    If Not record.EOF Then
+        MsgBox "Login realizado com sucesso!", vbInformation, "Sucesso"
+        Form1.Show
+        Me.Visible = False
+    Else
+        MsgBox "Usuário ou senha inválidos.", vbCritical, "Erro"
+    End If
+
+   'Fecha para não ocupar memória
+    record.Close
 End Sub
 
+'Função para exibir ou não oq é digitado na senha
 Private Sub checkSenha_Click()
 If Me.checkSenha.Value Then
    Me.TSenha.PasswordChar = ""
@@ -133,4 +162,8 @@ Else
     Me.TSenha.PasswordChar = "*"
 End If
 
+End Sub
+
+Private Sub Form_Load()
+Call Conexao
 End Sub
